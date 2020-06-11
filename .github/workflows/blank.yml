@@ -41,6 +41,6 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Use Node.js ${{ matrix.node-version }}
-      run: echo Hello, world!
+      run: npm install
 
     
