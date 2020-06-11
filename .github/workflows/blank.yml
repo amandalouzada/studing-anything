@@ -43,5 +43,18 @@ jobs:
     # Runs a single command using the runners shell
     - name: Use Node.js ${{ matrix.node-version }}
       run: npm install
+    
+    - name: Run teste
+      run: npm test
+      env:
+      # The hostname used to communicate with the PostgreSQL service container
+        NODE_ENV: test
+        DEBUG: true
+        DB_CLIENT: pg
+        DB_HOST: 127.0.0.1
+        DB_USER: postgres
+        DB_PASSWORD: postgres
+        DB_DATABASE: studing-anything-test
+        DB_PORT: 5432
 
     
