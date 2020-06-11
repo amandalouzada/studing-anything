@@ -69,11 +69,11 @@
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */
   },
   "exclude": [
-    "__tests__/**",
+    "__tests__/*",
     "jest.config.js",
-    "dist/**",
+    "dist/*",
     "knexfile.ts",
-    "coverage/**",
-    "migrations/**"
+    "coverage/*",
+    "migrations/*"
   ]
 }
