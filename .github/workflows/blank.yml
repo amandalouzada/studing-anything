@@ -20,6 +20,19 @@ jobs:
     strategy:
       matrix:
         node-version: [8.x, 10.x, 12.x]
+    
+    services:
+      postgres:
+        image: postgres
+        env:
+          POSTGRES_PASSWORD: postgres
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
       
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -30,8 +43,4 @@ jobs:
     - name: Use Node.js ${{ matrix.node-version }}
       run: echo Hello, world!
 
-    # Runs a set of commands using the runners shell
-    - name: Run a multi-line script
-      run: 
-        echo Add other actions to build,
-        echo test, and deploy your project.
+    
