@@ -6,7 +6,9 @@
   "scripts": {
     "start": "nodemon",
     "build": "tsc",
-    "test": "NODE_ENV=test jest"
+    "test": "NODE_ENV=test jest",
+    "pretest": "NODE_ENV=test knex migrate:latest",
+    "posttest": "NODE_ENV=test knex migrate:rollback"
   },
   "author": "Amanda Louzada",
   "license": "ISC",

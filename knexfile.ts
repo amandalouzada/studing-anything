@@ -1,14 +1,14 @@
+
+const client ='pg';
 // Update with your config settings.
-
 module.exports = {
-
   development: {
-    client: 'pg',
+    client: client,
     connection: {
       host: '127.0.0.1',
       user: 'postgres',
       password: 'postgres',
-      database: 'postgres',
+      database: 'studing-anything',
       port: 5432
     },
     migrations: {
@@ -23,7 +23,7 @@ module.exports = {
       host: '127.0.0.1',
       user: 'postgres',
       password: 'postgres',
-      database: 'postgres',
+      database: 'studing-anything-test',
       port: 5432
     },
     migrations: {
