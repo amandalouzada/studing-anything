@@ -1,6 +1,6 @@
 import './bootstrap';
 import '@consumers/index';
-import client from '@configs/kafka';
+// import client from '@configs/kafka';
 
 
 const initApp = async () => {
