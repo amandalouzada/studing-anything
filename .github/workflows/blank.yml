@@ -40,6 +40,13 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
+    - name: Configure AWS credentials from Test account
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.TEST_AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.TEST_AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-1
+
     # Runs a single command using the runners shell
     - name: Use Node.js ${{ matrix.node-version }}
       run: npm install
